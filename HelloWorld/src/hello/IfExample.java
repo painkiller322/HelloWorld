@@ -1,6 +1,6 @@
 package hello;
 
-public class ifExample {
+public class IfExample {
 	public static void main(String[] args) {
 		int a=98;
 		if(a>50 && a>100) { //||는 or, &&는 and
