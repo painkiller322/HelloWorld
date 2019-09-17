@@ -18,7 +18,7 @@ public class exercise05_09 {
 			int selectNo=scanner.nextInt();
 			
 			if(selectNo == 1) {
-				//학생수 입력로 열생성
+				int[] stunum;
 			}else if(selectNo == 2) {
 				//점수입력
 			}else if(selectNo == 3) {
