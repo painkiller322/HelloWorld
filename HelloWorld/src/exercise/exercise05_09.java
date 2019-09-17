@@ -18,7 +18,9 @@ public class exercise05_09 {
 			int selectNo=scanner.nextInt();
 			
 			if(selectNo == 1) {
-				int[] stunum;
+				System.out.println("학생수> ");
+				studentNum=scanner.nextInt();
+				scores=new int[studentNum];
 			}else if(selectNo == 2) {
 				//점수입력
 			}else if(selectNo == 3) {
