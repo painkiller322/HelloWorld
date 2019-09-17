@@ -23,5 +23,13 @@ public class ArrayTest {
 			sum += intAry[i];
 		}
 		System.out.println("입력값의 합은: " + sum);
+		//
+		int a, b, result=0;
+		System.out.println("첫번째값 입력");
+		a=sc.nextInt();
+		System.out.println("두번째값 입력");
+		b=sc.nextInt();
+		result=(a>b? a:b);
+		System.out.println("둘중에 큰 수는: "+result );
 	}
 }
