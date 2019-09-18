@@ -21,5 +21,6 @@ public class gugudan {
 		}System.out.println();
 		a++;
 	}
+	
 	}
 }
