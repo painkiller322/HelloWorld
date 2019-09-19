@@ -9,5 +9,6 @@ public class Test {
 			sum = sum + i;
 		}
 		System.out.println("1~10의 합은 " + sum);
+//char 와 int 이용해서 알파벳 순서대로 배열
 	}
 }
