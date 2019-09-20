@@ -1,8 +1,19 @@
 package Classes;
 
 public class Calculator {
+
+//	static+메소드
+	static double plus(double x, double y) {
+		return x + y;
+	}
+	
+	static double minus(double x, double y) {
+		return x - y;
+	}
+	static double pi = 3.14;
+	
 //	합
-	int plus(int x, int y) {
+	static int plus(int x, int y) {
 		int result = x + y;
 		return result;
 	}
