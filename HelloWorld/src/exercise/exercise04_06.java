@@ -2,10 +2,12 @@ package exercise;
 
 public class exercise04_06 {
 	public static void main(String[] args) {
-		int sum = 0;
-		for (int i = 1; i <= 10; i++) {
-			sum += i;
+
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 0; j < i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
-		System.out.println(sum);
 	}
 }
