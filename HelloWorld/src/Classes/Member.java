@@ -6,9 +6,7 @@ public class Member {
 	private String password;
 	private int age;
 //생성자
-	public Member() {
-		
-	}
+
 	public Member(String name, String id) {
 		this.name = name;
 		this.id = id;

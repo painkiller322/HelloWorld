@@ -1,11 +1,11 @@
 package Classes;
-
+//필드
 public class Account {
 	private String ano;
 	private String owner;
 	private int balance;
-
-	public Account() {
+//생성자
+	public Account(String name, int age, String id, String password) {
 	}
 
 	public Account(String ano, String owner, int balance) {
@@ -13,7 +13,7 @@ public class Account {
 		this.owner = owner;
 		this.balance = balance;
 	}
-
+//소스
 	public String getAno() {
 		return ano;
 	}

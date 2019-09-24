@@ -7,6 +7,10 @@ public class AccountExample {
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
+//		Account acnt = new Account();
+//		acnt.setAno("test");
+//		acnt.getAno();
+		
 		boolean run = true;
 		while (run) {
 			System.out.println("---------------------------------");
@@ -72,16 +76,16 @@ public class AccountExample {
 
 //	출금하는 메소드.
 	public static void withdraw() {
-//		System.out.println("withdraw()");
-//		System.out.println("계좌번호 입력: ");
-//		String accntNo = sc.nextLine();
-//		System.out.println("출금액: ");
-//		int accntBalance = sc.nextInt();
-//		for (Account accnt : accountArray) {
-//			if (accnt != null && accnt.getAno().equals(accntNo)) {
-//				accnt.setBalance(accntBalance);
-//			}
-//		}
+		System.out.println("withdraw()");
+		System.out.println("계좌번호 입력: ");
+		String accntNo = sc.nextLine();
+		System.out.println("출금액: ");
+		int accntBalance = sc.nextInt();
+		for (Account accnt : accountArray) {
+			if (accnt != null && accnt.getAno().equals(accntNo)) {
+				accnt.setBalance(-accntBalance);
+			}
+		}
 	}
 
 	public static Account findAccount(String ano) {
