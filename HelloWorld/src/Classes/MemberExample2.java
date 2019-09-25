@@ -89,12 +89,12 @@ public class MemberExample2 {
 				isPw = false;
 			}
 		}
-			if (isId == true && isPw == true)
-				System.out.println("이름은: " + name + ", 나이는" + age);
-			else if (isId == true && isPw == false)
-				System.out.println("비번 틀림");
-			else if (isId == false && isPw == false) {
-				System.out.println("존재하지 않는 ID");
-			}
+		if (isId == true && isPw == true)
+			System.out.println("이름은: " + name + ", 나이는" + age);
+		else if (isId == true && isPw == false)
+			System.out.println("비번 틀림");
+		else if (isId == false && isPw == false) {
+			System.out.println("존재하지 않는 ID");
 		}
 	}
+}
