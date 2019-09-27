@@ -141,7 +141,7 @@ public class TestScore {
 		for (TestScore s : StudentArray) {
 			if (s != null && stuNum == s.getStuNum())
 				System.out.println("학생번호: " + s.getStuNum() + "이름: " + s.getName() + ", 국어: " + s.getKor() + ", 영어: "
-						+ s.getEng() + ", 수학: " + s.getMath() + "총점: " + s.Total() + "평균: " + s.Avg());
+						+ s.getEng() + ", 수학: " + s.getMath() + ", 총점: " + s.Total() + ", 평균: " + s.Avg());
 		}
 	}
 
