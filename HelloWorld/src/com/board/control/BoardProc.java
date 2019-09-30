@@ -17,8 +17,14 @@ public class BoardProc {
 		while (true) {
 			System.out.println("메뉴선택하세요.");
 			System.out.println("1.작성 2.단건조회 3.전체조회 4.변경 5.삭제 6.종료");
-			int menu = sc.nextInt();
-			sc.hasNextLine();
+			int menu = 0;
+			try {// 메뉴에서 숫자 외 다른 문자 입력할때 예외지정
+				menu = sc.nextInt();//에러 발생 가능한 곳
+			} catch (Exception e) {//예외처리
+				System.out.println("정상적인 메뉴를 선택하세요.");
+				sc.nextLine();
+//				e.printStackTrace();
+			}
 			if (menu == 1) {
 				writeBoard();
 			} else if (menu == 2) {
