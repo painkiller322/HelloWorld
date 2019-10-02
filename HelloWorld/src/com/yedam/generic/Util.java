@@ -19,9 +19,17 @@ public class Util {
 		return bb;
 	}
 
-	public static <T extends Number> int compare(T t1, T t2) {//T는 Number를 상속한다
+	public static <T extends Number> int compare(T t1, T t2) {// T는 Number를 상속한다
 		double d1 = t1.doubleValue();
 		double d2 = t2.doubleValue();
 		return Double.compare(d1, d2);
+	}
+
+	public static <K, V> V getValue(Pair<K, V> p, K s) {
+		if (p.getKey().equals(s)) {
+			return p.getValue();
+		} else {
+			return null;
+		}
 	}
 }
