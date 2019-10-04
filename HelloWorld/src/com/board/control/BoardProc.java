@@ -1,16 +1,21 @@
 package com.board.control;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-import com.board.impl.BoardServiceImpl;
+import com.board.impl.BoardCollectionImpl;
 import com.board.model.Board;
-import com.board.model.BoardService;
+import com.board.model.BoardCollection;
 
 public class BoardProc {
 //	필드
 	Scanner sc = new Scanner(System.in);
-	Board[] boardAry = new Board[10];// db역할
-	BoardService service = new BoardServiceImpl();
+//	Board[] boardAry = new Board[10];// db역할
+	List<Board> boardAry = new ArrayList<>();
+	
+//	BoardService service = new BoardServiceImpl();
+	BoardCollection service = new BoardCollectionImpl();
 
 //	생성자
 	public void execute() {
@@ -19,8 +24,8 @@ public class BoardProc {
 			System.out.println("1.작성 2.단건조회 3.전체조회 4.변경 5.삭제 6.종료");
 			int menu = 0;
 			try {// 메뉴에서 숫자 외 다른 문자 입력할때 예외지정
-				menu = sc.nextInt();//에러 발생 가능한 곳
-			} catch (Exception e) {//예외처리
+				menu = sc.nextInt();// 에러 발생 가능한 곳
+			} catch (Exception e) {// 예외처리
 				System.out.println("정상적인 메뉴를 선택하세요.");
 				sc.nextLine();
 //				e.printStackTrace();
@@ -79,7 +84,7 @@ public class BoardProc {
 
 	public void getBoardList() {
 		System.out.println("전체글조회.");
-		Board[] resultAry = service.getBoardList(boardAry);
+		List<Board> resultAry = service.getBoardList(boardAry);
 		for (Board brd : resultAry) {
 			if (brd != null)
 				System.out.println(brd);

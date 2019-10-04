@@ -9,7 +9,7 @@ public class MethodExample {
 		System.out.println(args[0]);
 		showName();// 매개값이 없는 메소드
 		showAge(a);// 매개값이 하나인 메소드
-		showMe(175.5, 65.8);// 매계값이 두개인 메소드
+		showMe(175.5, 65.8);// 매개값이 두개인 메소드
 
 		int result1 = sum(4, 5);
 		System.out.println("결과값1: " + result1);
