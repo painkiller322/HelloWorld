@@ -3,9 +3,9 @@ package api;
 public class BoxingUnBoxingExample {
 	public static void main(String[] args) {
 		// Boxing
-		
-		Integer obj1 = new Integer(100);//기본타입
-		Integer obj2 = new Integer("200");//문자열
+
+		Integer obj1 = new Integer(100);// 기본타입
+		Integer obj2 = new Integer("200");// 문자열
 		Integer obj3 = Integer.valueOf("300");
 
 		// Unboxing
@@ -16,5 +16,6 @@ public class BoxingUnBoxingExample {
 		System.out.println(value1);
 		System.out.println(value2);
 		System.out.println(value3);
+
 	}
 }
