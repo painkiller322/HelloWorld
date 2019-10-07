@@ -1,14 +1,14 @@
 package api;
 
-public class Member implements Comparable<Member> {
+public class Sort implements Comparable<Sort> {
 	String name;
 
-	Member(String name) {
+	Sort(String name) {
 		this.name = name;
 	}
 
 	@Override
-	public int compareTo(Member o) {
+	public int compareTo(Sort o) {
 		return name.compareTo(o.name);
 	}
 }
