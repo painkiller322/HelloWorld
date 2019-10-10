@@ -13,7 +13,11 @@ public class EmpProc {
 	EmployeeService service = new EmployeeServiceImpl();
 
 	public void execute() {
+
 		while (true) {
+
+			login_check();// 데이터베이스에서 가져오기
+
 			System.out.println("메뉴선택하세요.");
 			System.out.println("1.작성 2.단건조회 3.전체조회 4.변경 5.삭제 9.종료 ");
 			int menu = 0;
@@ -43,10 +47,25 @@ public class EmpProc {
 		System.out.println("프로그램 종료.");
 	}
 
+	public void login_check() {
+		while (true) {
+			System.out.println("id 입력: ");
+			String id = sc.nextLine();
+			System.out.println("passwd 입력: ");
+			String passwd = sc.nextLine();
+			if (id.equals("user1") && passwd.equals("1234")) {
+				System.out.println("방문자 1님, 환영합니다.");
+				break;
+			} else {
+				System.out.println("id, passwd 입력.");
+			}
+		}
+	}
+
 	public void deleteBoard() {
 		System.out.println("삭제할 글번호:");
 		int empNo = sc.nextInt();
-      service.deleteEmployee(empNo);
+		service.deleteEmployee(empNo);
 	}
 
 	public void updateBoard() {
