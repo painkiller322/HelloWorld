@@ -26,7 +26,7 @@ public class BoardDBDAO {
 		if (board.getContent() != null && !board.getContent().equals("")) {
 			sql += ", content = ? ";
 		}
-		sql += "where board_no = ? and orig_no is null";
+		sql += "where board_no = ? and orig_no is null ";
 		int n = 0;
 		try {
 			pstmt = conn.prepareStatement(sql);
