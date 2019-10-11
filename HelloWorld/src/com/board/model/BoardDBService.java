@@ -10,7 +10,7 @@ public interface BoardDBService {
 	public void insertBoard(BoardDB board);
 
 //	게시글 리스트
-	public List<BoardDB> getBoardList(BoardDB board);
+	public List<BoardDB> getBoardList();
 
 //	한건 조회
 	public BoardDB getBoard(int boardNo);

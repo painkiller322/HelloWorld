@@ -20,33 +20,29 @@ public class BoardDBServiceImpl implements BoardDBService {
 	}
 
 	@Override
-	public List<BoardDB> getBoardList(BoardDB board) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<BoardDB> getBoardList() {
+		List<BoardDB> list = dao.getBoardList();
+		return list;
 	}
 
 	@Override
 	public BoardDB getBoard(int boardNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getBoard(boardNo);
 	}
 
 	@Override
 	public List<BoardDB> getReply(int boardNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getReplyList(boardNo);
 	}
 
 	@Override
 	public void insertReply(BoardDB board) {
-		// TODO Auto-generated method stub
-
+		dao.replyBoard(board);
 	}
 
 	@Override
 	public void updateBoard(BoardDB board) {
-		// TODO Auto-generated method stub
-
+		dao.updateBoard(board);
 	}
 
 	@Override

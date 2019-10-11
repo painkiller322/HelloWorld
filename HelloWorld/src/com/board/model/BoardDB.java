@@ -9,6 +9,14 @@ public class BoardDB {
 	private String creationDate;
 	private int origNo;
 
+	public int getOrigNo() {
+		return origNo;
+	}
+
+	public void setOrigNo(int origNo) {
+		this.origNo = origNo;
+	}
+
 	public int getBoardNo() {
 		return boardNo;
 	}
@@ -47,6 +55,12 @@ public class BoardDB {
 
 	public void setCreationDate(String creationDate) {
 		this.creationDate = creationDate;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardDB [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", creationDate=" + creationDate + ", origNo=" + origNo + "]";
 	}
 
 }

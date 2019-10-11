@@ -19,9 +19,25 @@ insert into user_login values ('user3', '1234', 'admin');
 
 select * from user_login;
 
+select name from user_login
+where id='user1' and passwd='1234';
+
 insert into boards values (1, 'title1', 'content1', 'user1', sysdate, null);
 insert into boards values (2, 'title1', 'content1', 'user1', sysdate, null);
 insert into boards values (3, 'title1', 'content1', 'user1', sysdate, 1);
 insert into boards values (4, 'title1', 'content1', 'user1', sysdate, 2);
+insert into boards values (5, 'title1', 'content1', 'user1', sysdate, 1);
+insert into boards values (6, 'title1', 'content1', 'user1', sysdate, 2);
+insert into boards values ((select max(board_no)+1 from boards), 'title1', 'contetn1', 'user1', sysdate, null);
+
+select nvl(max(board_no), 0)+1 from boards;
+
+create sequence board_seq;
+select board_seq.nextval from dual;
 
 select * from boards;
+
+/*
+1번 원본글(select * from boards where board_no=1)
+댓글(select * from boards where orig_no=1;)
+*/
