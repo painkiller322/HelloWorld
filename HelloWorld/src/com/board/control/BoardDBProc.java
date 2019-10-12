@@ -43,11 +43,11 @@ public class BoardDBProc {
 				System.out.println("7.삭제");
 				deleteBoard();
 			} else if (menu == 9) {
-				System.out.println("프로그램을 종료합니다.");
+				System.out.println("9.종료");
 				break;
 			}
 		}
-		System.out.println("프로그램 종료.");
+		System.out.println("프로그램을 종료합니다.");
 	}
 
 //	로그인
@@ -144,7 +144,7 @@ public class BoardDBProc {
 	public void updateBoard() {
 		System.out.println("변경할 글 번호: ");
 		int boardNo = sc.nextInt();
-		sc.nextInt();
+		sc.nextLine();
 		System.out.println("제목변경: ");
 		String title = sc.nextLine();
 		System.out.println("내용변경: ");
