@@ -1,20 +1,14 @@
 package api;
 
-public class Member2 {
-	public String id;
+public class Member2 implements Comparable<Member2> {
+	String name;
 
-	public Member2(String id) {
-		this.id = id;
+	Member2(String name) {
+		this.name = name;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Member2) {
-			Member2 member = (Member2) obj;
-			if (id.equals(member.id)) {
-				return true;
-			}
-		}
-		return false;
+	public int compareTo(Member2 o) {
+		return name.compareTo(o.name);
 	}
 }
