@@ -1,7 +1,7 @@
 package com.board.model;
 
 public class BoardDB {
-	
+
 	private int boardNo;
 	private String title;
 	private String content;

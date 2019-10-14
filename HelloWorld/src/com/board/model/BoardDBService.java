@@ -24,6 +24,10 @@ public interface BoardDBService {
 //	수정
 	public void updateBoard(BoardDB board);// (BoardDB board)라고 쓰면 안의 내용물 다 포함.
 
-//	삭제
-	public void deleteBoard(int boardNo);
+//	삭제(글 작성자만 삭제)
+	public void deleteBoard(BoardDB board);
+
+//	삭제 글 원본 이랑 댓글도 같이 삭제
+	public void delBoard(BoardDB board);
+
 }

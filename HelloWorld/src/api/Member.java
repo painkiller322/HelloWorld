@@ -1,6 +1,7 @@
 package api;
 
 public class Member {
+	String name;
 	public String id;
 
 	public Member(String id) {

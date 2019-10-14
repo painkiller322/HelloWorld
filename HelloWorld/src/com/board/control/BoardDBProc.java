@@ -15,6 +15,9 @@ public class BoardDBProc {
 	private String id;
 	private String pass;
 
+	private static final int boardNo = 0;
+	private static final int orgNo = 0;
+
 	String loginId = null;// 로그인 성공시 이 아이디로 계속활동을 선언.
 
 	public void execute() {
@@ -23,7 +26,7 @@ public class BoardDBProc {
 
 		while (true) {
 			int menu = 0;
-			System.out.println("1.게시글 작성|2.게시글 리스트|3.원본글 조회|4.수정|7.삭제|9.종료");
+			System.out.println("1.게시글 작성|2.게시글 리스트|3.원본글 조회|4.수정|5.삭제|6.원본글 & 댓글 삭제|9.종료");
 
 			menu = sc.nextInt();
 			sc.nextLine();
@@ -39,9 +42,13 @@ public class BoardDBProc {
 			} else if (menu == 4) {
 				System.out.println("4.수정");
 				updateBoard();
-			} else if (menu == 7) {
-				System.out.println("7.삭제");
+			} else if (menu == 5) {
+				System.out.println("5.삭제");
+				// 삭제 - 본인 글이 아니면 삭제 못함
 				deleteBoard();
+			} else if (menu == 6) {
+				// 삭제 - 원본글과 댓글까지 삭제
+				delBoard();
 			} else if (menu == 9) {
 				System.out.println("9.종료");
 				break;
@@ -153,16 +160,57 @@ public class BoardDBProc {
 		board.setBoardNo(boardNo);
 		board.setTitle(title);
 		board.setContent(content);
+		board.setWriter(loginId);
 
 		service.updateBoard(board);
 	}
 
-//7.삭제
-	public void deleteBoard() {
-		System.out.println("삭제할 글번호:");
-		int delNo = sc.nextInt();
+//5.삭제
+	public void deleteBoard() {// 1건씩 삭제
+		System.out.println("삭제할 글번호: ");
+		int dbNo = sc.nextInt();
+		sc.nextLine();
+		
+		BoardDB board = new BoardDB();
+		board.setBoardNo(boardNo);
+		board.setWriter(loginId);
 
-		service.deleteBoard(delNo);
+		service.deleteBoard(board);
+
+//		System.out.println("삭제할 글번호: ");
+//		int dbNo = sc.nextInt();
+//		sc.nextLine();
+//		
+//		BoardDB board = service.getBoard(dbNo);
+//
+//		if (board == null) {
+//			System.out.println("게시글이 없습니다.");
+//		} else if (loginId.equals(board.getWriter())) {
+//			service.deleteBoard(board);
+//			System.out.println("게시글이 삭제되었습니다.");
+//		} else {
+//			System.out.println("권한이 없습니다.");
+//		}
+
 	}
 
+//	   6.댓글도 삭제
+	public void delBoard() {// 원본글이나 댓글까지 일괄 삭제 ex) 원본글에 댓글이 있을 경우 댓글까지 삭제
+		BoardDB board = new BoardDB();
+		System.out.println("삭제할 글번호: ");
+		int dbNo = sc.nextInt();
+		sc.nextLine();
+		board.setBoardNo(dbNo);
+		board.setOrigNo(board.getBoardNo());
+		BoardDB bd = service.getBoard(dbNo);
+
+		if (bd == null) {
+			System.out.println("없는 게시글입니다.");
+		} else if (loginId.equals(bd.getWriter())) {
+			service.delBoard(board);
+			System.out.println("게시글이 삭제되었습니다.");
+		} else {
+			System.out.println("권한이 없습니다.");
+		}
+	}
 }
