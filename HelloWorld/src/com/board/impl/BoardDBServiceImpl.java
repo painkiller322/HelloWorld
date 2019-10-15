@@ -54,17 +54,19 @@ public class BoardDBServiceImpl implements BoardDBService {
 
 	@Override
 	public void deleteBoard(BoardDB board) {
-		if (dao.checkResponsibility(board)) {// 권한체크
-			dao.deleteBoard1(board);
+//		if (dao.checkResponsibility(board)) {// 권한체크
+			
+//			dao.deleteBoard1(board);
+			
 //			if (!dao.checkForReply(board.getBoardNo())) {// 댓글유무체크
-//				dao.deleteBoard2(board);
+				dao.deleteBoard2(board);
 //				System.out.println("삭제되었습니다.");
 //			} else {
 //				System.out.println("댓글이 있어서 삭제가 되지 않습니다.");
 //			}
 //		} else {
-			System.out.println("권한이 없습니다.");
-		}
+//			System.out.println("권한이 없습니다.");
+//		}
 	}
 
 	@Override

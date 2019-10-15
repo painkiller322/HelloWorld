@@ -167,30 +167,30 @@ public class BoardDBProc {
 
 //5.삭제
 	public void deleteBoard() {// 1건씩 삭제
-		System.out.println("삭제할 글번호: ");
-		int dbNo = sc.nextInt();
-		sc.nextLine();
-		
-		BoardDB board = new BoardDB();
-		board.setBoardNo(boardNo);
-		board.setWriter(loginId);
-
-		service.deleteBoard(board);
-
 //		System.out.println("삭제할 글번호: ");
 //		int dbNo = sc.nextInt();
 //		sc.nextLine();
 //		
-//		BoardDB board = service.getBoard(dbNo);
+//		BoardDB board = new BoardDB();
+//		board.setBoardNo(boardNo);
+//		board.setWriter(loginId);
 //
-//		if (board == null) {
-//			System.out.println("게시글이 없습니다.");
-//		} else if (loginId.equals(board.getWriter())) {
-//			service.deleteBoard(board);
-//			System.out.println("게시글이 삭제되었습니다.");
-//		} else {
-//			System.out.println("권한이 없습니다.");
-//		}
+//		service.deleteBoard(board);
+
+		System.out.println("삭제할 글번호: ");
+		int dbNo = sc.nextInt();
+		sc.nextLine();
+		
+		BoardDB board = service.getBoard(dbNo);
+
+		if (board == null) {
+			System.out.println("게시글이 없습니다.");
+		} else if (loginId.equals(board.getWriter())) {
+			service.deleteBoard(board);
+			System.out.println("게시글이 삭제되었습니다.");
+		} else {
+			System.out.println("권한이 없습니다.");
+		}
 
 	}
 
