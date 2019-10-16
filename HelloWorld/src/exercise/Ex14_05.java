@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.function.IntBinaryOperator;
 
-public class Exercise14_05 {
+public class Ex14_05 {
 	private static int[] scores = { 10, 50, 3 };
 
 	public static int maxOrMin(IntBinaryOperator operator) {

@@ -1,6 +1,6 @@
 package exercise;
 
-public class exercise03_08 {
+public class Ex03_08 {
 	public static void main(String[] args) {
 		double x=5.0;
 		double y=0.0;

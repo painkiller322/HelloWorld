@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.function.ToIntFunction;
 
-public class Exercise14_06 {
+public class Ex14_06 {
 	private static Student[] students = { new Student("홍길동", 90, 96), new Student("신용권", 95, 93) };
 
 //avg() 메소드 작성

@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.Scanner;
 
-public class exercise04_07 {
+public class Ex04_07 {
 	public static void main(String[] args) {
 		boolean run = true;
 

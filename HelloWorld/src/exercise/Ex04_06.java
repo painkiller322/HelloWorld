@@ -1,6 +1,6 @@
 package exercise;
 
-public class exercise04_06 {
+public class Ex04_06 {
 	public static void main(String[] args) {
 
 		for (int i = 1; i <= 5; i++) {

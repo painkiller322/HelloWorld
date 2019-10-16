@@ -1,6 +1,6 @@
 package exercise;
 
-public class exercise03_06 {
+public class Ex03_06 {
 	public static void main(String[] args) {
 		int lengthTop=5;
 		int lengthBottom=10;
