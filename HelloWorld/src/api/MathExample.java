@@ -45,5 +45,7 @@ public class MathExample {
 		long temp2 = Math.round(temp1);
 		double v16 = temp2 / 100.0;
 		System.out.println("v16=" + v16);
+
+
 	}
 }
